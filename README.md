@@ -1,7 +1,7 @@
 # Bank-Customer-Churn-Analysis
 This project explores the drivers of customer churn at a fictional bank using exploratory data analysis and machine learning. The goal is to identify key factors that predict whether a customer will leave the bank and quantify their relative importance.
 
-The data set used for this analysis and modeling exercise was obtained from [Kaggle](https://www.kaggle.com/datasets/gauravtopre/bank-customer-churn-dataset) and comprises customer details for Bank ABC. Fields include:
+The data set used for this analysis and modeling exercise was obtained from [Kaggle](https://www.kaggle.com/datasets/gauravtopre/bank-customer-churn-dataset) and comprises customer details for Bank ABC. **Fields include:**
 
 - Customer ID - Unique identifier assigned to bank customer
 - Credit Score - The customer's credit score
@@ -16,4 +16,13 @@ The data set used for this analysis and modeling exercise was obtained from [Kag
 - Estimated Salary - The customer's estimated salary at the time of data collection
 - Churn - The primary variable of interest; indicates whether the customer has left the bank (Y/N)
 
-Data Analysis Approach: Python (Pandas) was used for cleaning and initial EDA (Distribution of means & data spread, univariate and multivariate comparisons to churn, correlation heat maps, and chi squared & t-tests). Random forest modeling was used to assess feature importance, predict the likelihood of customer churn, and identify conditions that increase churn risk.
+**Data Analysis Approach:** Python (Pandas) was used for cleaning and initial EDA (Distribution of means & data spread, univariate and multivariate comparisons to churn, correlation heat maps, and chi squared & t-tests). Random forest modeling was used to assess feature importance, predict the likelihood of customer churn, and identify conditions that increase churn risk.
+
+**Findngs:** A sensitivity-adjusted random forest model (0.20 classification threshold) correctly identified 81% of customers who churned. Key drivers of churn were:
+
+- Age - risk increases substantially after 40, with customers in their late 40s to early 60s at highest risk
+- Number of products — customers with 3 or 4 bank products are at considerably higher risk than those with 1 or 2
+- Membership activity — non-active members have over 27% higher churn probability than active members
+- Geography & gender — customers in Germany and female customers churn at modestly higher rates
+
+Retention efforts should be prioritized for customers aged 45–65 who hold 3+ products and show signs of disengagement.
