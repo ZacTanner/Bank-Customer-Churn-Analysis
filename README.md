@@ -18,11 +18,11 @@ The data set used for this analysis and modeling exercise was obtained from [Kag
 
 **Data Analysis Approach:** Python (Pandas) was used for cleaning and initial EDA (Distribution of means & data spread, univariate and multivariate comparisons to churn, correlation heat maps, and chi squared & t-tests). Random forest modeling was used to assess feature importance, predict the likelihood of customer churn, and identify conditions that increase churn risk.
 
-**Findngs:** A sensitivity-adjusted random forest model (0.20 classification threshold) correctly identified 81% of customers who churned. Key drivers of churn were:
+**Findngs:** The tuned Random Forest, evaluated at the F₂-optimal classification threshold, correctly identifies 83% of customers who churn (sensitivity = 0.831), with a cross-validated ROC AUC of 0.860. Key drivers of churn were:
 
-- Age - risk increases substantially after 40, with customers in their late 40s to early 60s at highest risk
-- Number of products — customers with 3 or 4 bank products are at considerably higher risk than those with 1 or 2
-- Membership activity — non-active members have over 27% higher churn probability than active members
-- Geography & gender — customers in Germany and female customers churn at modestly higher rates
+- Age — risk increases substantially after 40, with customers in their late 40s to early 60s at highest risk
+- Number of products — customers with 3 or 4 bank products are at considerably higher risk than those with 1 or 2, a non-linear effect not captured by linear correlation
+- Membership activity — non-active members show substantially higher churn probability than active members, with the PDP confirming a clear step change between the two groups
+- Geography & gender — German customers churn at a meaningfully higher rate than French or Spanish customers (Cramér's V = 0.17); female customers churn at a modestly higher rate than male customers (point-biserial r = −0.11)
 
-Retention efforts should be prioritized for customers aged 45–65 who hold 3+ products and show signs of disengagement.
+Retention efforts should be prioritised for customers aged 45–65 who hold 3 or more products and show signs of membership disengagement. German customers, particularly older female customers, represent a high-risk geographic segment warranting targeted intervention.
